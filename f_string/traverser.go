@@ -42,8 +42,7 @@ type Traversor struct {
 //   - error: An error if the line could not be written.
 func (t *Traversor) WriteLine(str string) error {
 	if t == nil {
-		err := gers.NewErrNilReceiver()
-		err.AddFrame("*Traversor.WriteLine()")
+		err := gers.NewErrNilReceiver("*Traversor.WriteLine()")
 
 		return err
 	}
@@ -87,8 +86,7 @@ func (t *Traversor) Write(data []byte) (int, error) {
 	}
 
 	if t == nil {
-		err := gers.NewErrNilReceiver()
-		err.AddFrame("*Traversor.Write()")
+		err := gers.NewErrNilReceiver("*Traversor.Write()")
 
 		return 0, err
 	}
@@ -127,8 +125,7 @@ func (t *Traversor) Write(data []byte) (int, error) {
 // If the new indent level is less than 0, it is set to 0.
 func (t *Traversor) IndentBy(n int) (*Traversor, error) {
 	if t == nil {
-		err := gers.NewErrNilReceiver()
-		err.AddFrame("*Traversor.IndentBy()")
+		err := gers.NewErrNilReceiver("*Traversor.IndentBy()")
 
 		return nil, err
 	}

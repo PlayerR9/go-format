@@ -23,8 +23,7 @@ type Buffer struct {
 //   - *errors.Err: An error if the buffer could not be created.
 func NewBuffer(w io.Writer) (*Buffer, *gers.Err) {
 	if w == nil {
-		err := gers.NewErrNilReceiver()
-		err.AddFrame("internal.NewBuffer()")
+		err := gers.NewErrNilReceiver("internal.NewBuffer()")
 
 		return nil, err
 	}
