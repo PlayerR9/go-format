@@ -20,8 +20,8 @@ type Buffer struct {
 //
 // Returns:
 //   - *Buffer: The new buffer.
-//   - *errors.Err: An error if the buffer could not be created.
-func NewBuffer(w io.Writer) (*Buffer, *gers.Err) {
+//   - *error: An error if the buffer could not be created.
+func NewBuffer(w io.Writer) (*Buffer, error) {
 	if w == nil {
 		err := gers.NewErrNilReceiver("internal.NewBuffer()")
 
